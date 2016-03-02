@@ -7,24 +7,21 @@ window.onload = function(){
   var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: "100%"}});
 
   smoothScroll.init();
+
   if(window.location.pathname.includes("therapien/")) {
     initTopButtonFunctionality();
-  }
-  else if(!window.location.pathname.includes("disclaimer")) {
+  } else if(!window.location.pathname.includes("disclaimer")) {
       initScrolling();
       initGallery();
       initSubmitForm();
-
+      setOpenCloseSpan();
   }
   var menu = document.getElementsByClassName('navbar')[0];
   var triggerEl = document.getElementsByClassName('mobile-menu')[0];
-  console.log(triggerEl);
-  // $('mobile-menu')
 
   triggerEl.onclick = (function(){
     var isExpanded = false;
     return function(el){
-      console.log(1);
       if(isExpanded) {
         isExpanded = false;
         triggerEl.innerHTML = "≡";
@@ -99,6 +96,7 @@ window.onload = function(){
     var l = ladda.create( document.querySelector( '.myButton' ) );
     form.onsubmit = function(e){
       e.preventDefault();
+      // masking Buttons
       l.start();
       $.ajax({
           url:'mail.php',
@@ -109,6 +107,7 @@ window.onload = function(){
             $('.success').show();
           },
           complete:function(){
+            // unmask button
             l.stop();
           },
           error: function(e) {
@@ -130,5 +129,32 @@ window.onload = function(){
                 isShown = true;
               }
             });
+  }
+  function setOpenCloseSpan() {
+    var isOpen = false,
+      date = new Date(),
+      el = document.querySelector('.is-open'),
+      day = date.getDay(),
+      hour = date.getHours(), minutes =  date.getMinutes();
+    if(!el) {
+      return;
+    }
+    var isWeekend = day === 6 || day === 0;
+    if(isWeekend) {
+      setSpanText(false);
+    } else if((hour >=  8 && hour <= 20 ) || (hour === 7 && minutes >= 30)) {
+      setSpanText(true);
+    } else {
+      setSpanText(false);
+    }
+    function setSpanText(isOpen) {
+      console.log(isOpen);
+      console.log(el);
+      if(isOpen)
+        el.innerHTML = "Wir sind gerade geöffnet.";
+      else
+        el.innerHTML = "Wir sind gerade geschlossen.";
+    }
+
   }
 }
