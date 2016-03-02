@@ -1,0 +1,12 @@
+@define-mixin backImage
+    $image,
+    $maxHeight: 100vh,
+    $height: 100vh,
+    $bgPos: center center {
+        background: url($image);
+        background-position: $bgPos;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: $height;
+        max-height: $maxHeight;
+}

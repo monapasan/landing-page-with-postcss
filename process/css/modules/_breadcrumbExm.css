@@ -1,0 +1,93 @@
+$menu-height: 60px;
+$menu-angle: 30px;
+$menu-color: rgba(197, 219, 179, 1);
+$menu-hover-color: color(#0fff83 shade(40%));
+
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  font: 20px Helvetica, Arial, Sans-Serif;
+  height: $menu-height;
+}
+.breadcrumb li {
+  float: left;
+  margin-bottom: 1rem;
+}
+.breadcrumb li a {
+  color: $offwhite;
+  text-decoration: none;
+  padding: calc($menu-height/3) 10px calc($menu-height/3) $menu-height;
+  background: $menu-color;
+  transition: background-color 0.4s ease 0s;
+  position: relative;
+  display: block;
+  float: left;
+}
+.breadcrumb li a:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: $menu-height solid transparent;           /* Go big on the size, and let overflow hide */
+  border-bottom: $menu-height solid transparent;
+  border-left: $menu-angle solid $menu-color;
+  transition:  border-left-color 0.4s ease 0s;
+  position: absolute;
+  top: 50%;
+  margin-top: -$menu-height;
+  left: 100%;
+  z-index: 2;
+}
+.breadcrumb li a:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: $menu-height solid transparent;           /* Go big on the size, and let overflow hide */
+  border-bottom: $menu-height solid transparent;
+  border-left: $menu-angle solid $gray;
+  position: absolute;
+  top: 50%;
+  margin-top: -$menu-height;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1;
+}
+.breadcrumb li:first-child {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  a {
+    padding-left: 10px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+}
+.breadcrumb li {
+   background: $menu-color;
+   transition: background-color 0.4s ease 0s;
+   &:after {
+     border-left-color: $menu-color;
+     transition:  border-left-color 0.4s ease 0s;
+   }
+   &:last-child {
+     border-radius: 7px;
+     a {
+       border-radius: 7px;
+     }
+   }
+}
+.breadcrumb li:last-child a {
+  background: $main;
+  &:after {
+    border:0;
+  }
+  &:before {
+    border-left:0;
+    &:hover {
+      background-color: $menu-hover-color;
+    }
+  }
+}
+/*.breadcrumb li:last-child a:after { border: 0; }*/
+.breadcrumb li a:hover { background: $menu-hover-color !important; }
+.breadcrumb li a:hover:after { border-left-color: $menu-hover-color !important; }

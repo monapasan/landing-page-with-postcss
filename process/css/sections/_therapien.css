@@ -1,0 +1,52 @@
+$red: #74262C;
+
+.header.therapien {
+  z-index: -1;
+  @media screen and (max-width: 300px) {
+    @mixin backImage '../images/backgrounds/checkingPulsBW.jpg', 30vh;
+  }
+  @media $mobile{
+    @mixin backImage '../images/backgrounds/checkingPulsBW.jpg', 60vh;
+  }
+  @media $small {
+    @mixin backImage '../images/backgrounds/checkingPulsBW.jpg', 100vh;
+  }
+}
+.therapien-text {
+    margin: 0 auto;
+    font-size: 75%;
+    padding-left: 2rem;
+    h2 {
+      padding-left: 1rem;
+      color: $red;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    @media $small {
+      padding-left: 5rem;
+      h2 {
+        margin: 5rem 3rem;
+      }
+      ul {
+        padding-left: 3rem;
+      }
+    }
+
+}
+.goup {
+  margin: 0 auto;
+  margin-top: 10rem;
+  text-align: center;
+  div {
+    transform: rotate(180deg);
+  }
+  a {
+    fill: $main;
+  }
+  p {
+    margin-top: 1rem;
+  }
+}

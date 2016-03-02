@@ -1,0 +1,91 @@
+#membership {
+  padding-top: 2rem;
+  @media $small {
+    .ceoimage {
+      position: relative;
+      .quotes {
+        width: 60%;
+        text-align: center;
+        padding-top: 8rem;
+        font-size: 2.1rem;
+        height: 40vh;
+      }
+      img {
+        /*width: 65%;
+        left: 41%;*/
+        width: 56%;
+        left: 48%;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .prices-card {
+      display: flex;
+      flex-direction: row;
+      flex: 0 1 auto;
+      justify-content: space-around;
+      .price-card {
+        margin: 0 2rem;
+        width: calc(50% - 1.5rem);
+        .additional {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .header-prices {
+    color: $black;
+    line-height: 140%;
+    font-weight: $font-weight-normal;
+    margin-bottom: 2rem;
+  }
+  .additional {
+    font-size: 90%;
+    font-style: italic;
+  }
+  .price-div {
+    padding: 1rem;
+    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
+    border: 0.8rem solid rgba(255, 255, 255, 1);
+  }
+  .card-with-shadow:after {
+    content: '';
+    display: block;
+    height: 26px;
+    background-image: url('../images/logos/shadow.png');
+    background-position-x: -1.2rem;
+    @media $small {
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      background-position: center top;
+    }
+  }
+  .quotes {
+    color: $black;
+    font-weight: $font-weight-normal;
+  }
+  .ceoimage{
+
+    h3 {
+      padding-top: 2vh;
+    }
+  }
+  @media $medium {
+
+    .ceoimage {
+      height: 65vh;
+      img {
+        width: 50%;
+        right:0;
+        left: inherit;
+      }
+      h3.quotes {
+        width: 50%;
+        text-align: center;
+        padding-top: 8rem;
+        margin-left: 5rem;
+      }
+    }
+  }
+}

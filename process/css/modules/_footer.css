@@ -1,0 +1,62 @@
+.footer {
+    background-color: $gray;
+    color: $offwhite;
+    text-align: center;
+    @media $small {
+      height: 20vh;
+      padding: 3rem 0;
+      p {
+        margin-top: 1rem;
+      }
+    }
+    @media $large {
+      height: 40vh;
+      p {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+      }
+    }
+    .logos-list {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      li {
+        width: 4rem;
+        height: 4rem;
+        margin: 1rem 1rem;
+      }
+    }
+    p {
+      font-weight: $font-weight-heavy;
+      padding-bottom: 2rem;
+    }
+}
+
+#impressum {
+  h2 {
+    margin: 0 auto;
+    text-align: center;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 120%;
+  }
+  p:last-child {
+    line-height: 200%;
+    margin-top: 2rem;
+  }
+  a {
+    font-size: inherit;
+    color: $black;
+  }
+  h2 {
+    line-height: 300%;
+  }
+  .colorholder {
+    height: 10vh;
+    display:block;
+    background-color: $gray;
+  }
+}

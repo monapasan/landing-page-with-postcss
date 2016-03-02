@@ -1,0 +1,24 @@
+.header {
+  z-index: -1;
+  @media screen and (max-width: 300px) {
+    @mixin backImage '../images/backgrounds/massageBG.jpg', 30vh;
+  }
+  @media $mobile{
+    @mixin backImage '../images/backgrounds/massageBG.jpg', 60vh;
+  }
+  @media $small {
+    @mixin backImage '../images/backgrounds/massageBG.jpg', 100vh;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .logos-list {
+    list-style-type: none;
+    display: flex;
+    .logo-item {
+      width: 4rem;
+      height: auto;
+      margin-right: 2rem;
+    }
+  }
+}

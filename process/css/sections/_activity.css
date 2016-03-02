@@ -1,0 +1,72 @@
+@define-mixin tab {
+      /*background-color: ;*/
+      border-radius: 1rem;
+      margin-bottom: 4rem;
+      position: relative;
+      background-color: color($black alpha(-30%));
+      box-shadow: 2px -2px 3px color($main alpha(70%));
+      @media $medium {
+        width: 47%;
+      }
+      .scotch {
+         background: url('../images/logos/scotch.png') top no-repeat;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         bottom: 13%;
+      }
+      h3 {
+        color:$offwhite;
+        margin-left: 2rem;
+        line-height: 6rem;
+        font-weight: $font-weight-normal;
+      }
+      ul {
+        li {
+            margin-left: 4rem;
+            padding-left: 1rem;
+            line-height: 120%;
+            padding-bottom: 0.4rem;
+            padding-right: 0.2rem;
+        }
+        li:last-child {
+          padding-bottom: 3rem;
+        }
+      }
+}
+
+#activity {
+  @media $mobile {
+    margin-top: 4rem;
+  }
+  /*margin: 3rem 0;*/
+  padding-top: 5rem;
+  background: url('../images/backgrounds/checkingPulsBg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*@mixin backImage '../images/backgrounds/checkingPulsBg.jpg', 200vh, 200vh;*/
+  color:$offwhite;
+  .tabs {
+    width: 97%;
+    margin: 0 auto;
+  }
+  @media $small {
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+    }
+    .activity-tab {
+      margin-right: 1rem;
+    }
+    .advantage-tab {
+      margin-left: 1rem;
+    }
+  }
+  .activity-tab {
+    @mixin tab;
+  }
+  .advantage-tab {
+    @mixin tab;
+  }
+}

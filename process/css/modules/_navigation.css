@@ -1,0 +1,135 @@
+.nav {
+  .navbar {
+      list-style-type: none;
+      @media screen and (max-width: 700px) {
+        position: absolute;
+        overflow: hidden;
+        transition: all 0.15s ease-in;
+        transform-origin: top;
+        transform: scaleY(0);
+        &.expanded {
+          transform: scaleY(1);
+        }
+        width: 80%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        li {
+          border: 2px solid $offwhite;
+          border-top: 1px solid $offwhite;
+          border-bottom: 1px solid $offwhite;
+          background-color: color($main alpha(90%));
+          padding: 1rem 1rem;
+        }
+        .mobile-cls {
+          padding-left: 3rem;
+        }
+        li.has-children {
+          &:after {
+            // content: "∨";
+            position: relative;
+            left: 50%;
+            font-size: 3rem;
+          }
+          &.toggle-on:after {
+            content: "\f106";
+          }
+          ul {
+            display: none;
+            transform: scaleY(0);
+          }
+        }
+        li:first-child {
+          border-top: 2px solid $offwhite;
+        }
+        li:last-child {
+          border-bottom: 2px solid $offwhite;
+        }
+      }  /* mobile*/
+      margin: 0 auto;
+      a {
+        color:$offwhite;
+        text-decoration: none;
+      }
+      @media $smaller {
+        display: flex;
+        justify-content:space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        li {
+          text-align: center;
+          flex: 1 0 auto;
+        }
+      }
+  }
+  .nav-elements {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    @media $smaller {
+        // margin-top: 2rem;
+        display: block;
+        width: 100%;
+        height: 10vh;
+        border-radius: 10px;
+    }
+    .branding {
+      float: right;
+      width: 70%;
+      max-width: 400px;
+    }
+    .mobile-menu {
+      @media $smaller {
+        display: none;
+      }
+      width: 5rem;
+      height: 5rem;
+      margin-top: 1rem;
+      background-color: $main;
+      border: 1px $offwhite solid;
+      border-radius: 10px;
+      color: $offwhite;
+      text-align: center;
+      line-height: 5rem;
+      font-size: 3.5rem;
+    }
+  }
+}
+
+#home {
+  .godown {
+    @media $mobile {
+      display: none;
+    }
+    text-align: center;
+    a {
+      fill:$main;
+    }
+  }
+}
+
+#topButton {
+  @media $small {
+    display: none;
+  }
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+  width: 5rem;
+  height: 5rem;
+  background: url('../images/logos/topButton.png') center center no-repeat;
+  background-size: cover;
+  position: fixed;
+  right: 0;
+  bottom: 20%;
+  z-index:1;
+  a {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}

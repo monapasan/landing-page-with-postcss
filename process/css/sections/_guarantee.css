@@ -1,0 +1,16 @@
+$color-background-guarantee: color($green shade(25%));
+
+#guarantee {
+    color: $background-color;
+    font-size: 2rem;
+    background-color: $color-background-guarantee;
+    .imageheader {
+        @mixin backImage '../images/backgrounds/cycling.jpg', auto, transparent, $color-background-guarantee;
+    }
+    .headline {
+        color: color( $yellow tint(15%));
+    }
+    a {
+        color: color($green tint(30%));
+    }
+}

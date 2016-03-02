@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Play:400,700);
+@import url(https://fonts.googleapis.com/css?family=Spinnaker);
+$font-main: Play, Helvetica, Arial, sans-serif;
+$font-add: 'Spinnaker', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 400;
+$font-weight-heavy: 700;
+
+
+/* colors */
+$offwhite: #f6f6f6;
+$darkbule: #076c87;
+$green:    #39be90;
+$orange:  #d18606;
+$blue:    rgb(149, 182, 255);
+$yellow:  rgb(237, 223, 33);
+$red:     #ff713c;
+$purple:  #6D73C2;
+$black: #55555D;
+$gray: rgb(85, 85, 93);
+$main: rgba(197, 219, 179, 0.91);
+$background-color: $offwhite;
+
+$mobile: screen and (max-width: 600px);
+$small: screen and (min-width: 600px);
+$smaller: screen and (min-width: 700px);
+$medium: screen and (min-width: 900px);
+$large: screen and (min-width: 1200px);
+
+$container-default-width: 95%;
+$container-max-width: 100rem;

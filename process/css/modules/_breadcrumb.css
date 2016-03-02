@@ -1,0 +1,119 @@
+$height: 80px;
+$angle: 50px;
+$menu-color: $main;
+$hover-color: color(#58bd39 alpha(70%));
+
+@media $smaller{
+
+  .breadcrumb {
+    list-style: none;
+    color: #fff;
+    display: inline-block;
+    border-radius: 1.5rem;
+    .mobile-cls {
+      display: none;
+    }
+    li.has-children {
+      ul {
+        display: none;
+        position: absolute;
+        transition: all .3s ease-in;
+        li {
+          padding: 2rem;
+          line-height: 80%;
+          border-radius: 1.5rem;
+        }
+      }
+      &:hover {
+        ul {
+          display: block;
+        }
+      }
+    }
+    @media $medium {
+      li {
+        padding: 0 1.5rem;
+      }
+      a {
+        font-size: 1.85rem;
+      }
+    }
+    @media $large {
+      li {
+        padding: 0 3rem;
+      }
+      a {
+        font-size: 1.85rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $offwhite;
+      font-family: $font-add;
+      font-size: 1.7rem;
+    }
+     li {
+      display: inline-block;
+      padding: 0 0.7rem;
+      margin-bottom: 1rem;
+      line-height: $height;
+      background: $main;
+      position: relative;
+      border: 0 $main;
+      transition: background .25s, border-color .25s, margin .125s;
+      cursor: pointer;
+
+      & + li {
+        margin-left: 2.3rem;
+      }
+
+      &:hover {
+        background: $hover-color;
+        border-color: $hover-color;
+        margin-left: 3.3rem;
+        margin-right: 1rem;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        border: calc($height/2) solid transparent;
+        border-left: calc($height/4) solid transparent;
+        border-right: 0;
+        top: 0;
+      }
+
+      &:before {
+        right: 100%;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+      }
+
+      &:after {
+        left: 100%;
+        border-left-color: inherit;
+      }
+
+      &:first-child {
+        border-radius: 1rem 0 0 1rem;
+        padding-left: 4rem;
+        margin-left: 0;
+
+        &:before {
+          content: none;
+        }
+      }
+
+      &:last-child {
+        border-radius: 0 1rem 1rem 0;
+        padding-right: 4rem;
+        margin-right: 0;
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+#circles {
+  @media $mobile {
+    display: none;
+  }
+  z-index: 10;
+  position: fixed;
+  bottom: 50%;
+  right: 0;
+  list-style-type: none;
+  margin-right: 2rem;
+  li {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    border: 3px solid $main;
+    border-radius: 2rem;
+  }
+  li.active, li:hover, li:focus {
+    background-color: $gray;
+  }
+}
