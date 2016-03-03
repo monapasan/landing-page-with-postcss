@@ -153,7 +153,7 @@ window.onload = function(){
       if(isOpen)
         el.innerHTML = "Wir sind gerade geöffnet.";
       else
-        el.innerHTML = "Wir sind gerade geschlossen.";
+        el.innerHTML = "Wir haben gerade geschlossen.";
     }
 
   }
