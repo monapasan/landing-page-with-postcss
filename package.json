@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "flickity": "^1.1.2",
+    "flickity-imagesloaded": "^1.0.2",
     "gsap": "^1.18.2",
     "ladda": "^0.9.8",
     "scrollmagic": "^2.0.5",

@@ -2,6 +2,10 @@
     background-color: $gray;
     color: $offwhite;
     text-align: center;
+    padding: 1.5rem 0;
+    @media $mobile {
+        font-size: 1.5rem;
+    }
     @media $small {
       height: 20vh;
       padding: 3rem 0;
@@ -33,6 +37,9 @@
 }
 
 #impressum {
+  .text-content {
+    margin-bottom: 2rem;
+  }
   h2 {
     margin: 0 auto;
     text-align: center;

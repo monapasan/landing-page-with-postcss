@@ -14,6 +14,11 @@ $width: 100%;
     .card-info {
       text-align: center;
       line-height: 130%;
+      @media $mobile {
+        br {
+          display: none;
+        }
+      }
       .card-name {
         color: $black;
         @media $small {font-size: 1.4rem;}
@@ -37,8 +42,6 @@ $width: 100%;
       .person-card {
         width: calc($width/4 - 1.5rem);
         padding: 0 2rem;
-        .img {
-        }
       }
 
     }

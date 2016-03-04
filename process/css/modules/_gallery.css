@@ -1,9 +1,15 @@
 #gallery {
   background: #EEE;
+  /*visibility: hidden;*/
+  overflow: hidden;
+  height: 30vh;
   margin: 5rem 0;
   img {
     height: 30vh;
   }
+  @media $small {height: 50vh;}
+  @media $medium { height: 70vh;}
+  @media $large {height: 80vh;}
   img {
     @media $small {height: 50vh;}
     @media $medium { height: 70vh;}

@@ -1,6 +1,6 @@
 var smoothScroll = require('smooth-scroll');
 var ScrollMagic = require('ScrollMagic');
-var Flickity = require('flickity');
+var Flickity = require('flickity-imagesloaded');
 var ladda = require('ladda');
 // smooth-scroll
 window.onload = function(){
@@ -10,18 +10,22 @@ window.onload = function(){
 
   if(window.location.pathname.includes("therapien/")) {
     initTopButtonFunctionality();
+    initMenu();
   } else if(!window.location.pathname.includes("disclaimer")) {
       initScrolling();
       initGallery();
       initSubmitForm();
       setOpenCloseSpan();
+      initMenu();
   }
-  var menu = document.getElementsByClassName('navbar')[0];
-  var triggerEl = document.getElementsByClassName('mobile-menu')[0];
 
-  triggerEl.onclick = (function(){
+  function initMenu(){
+    var menu = document.querySelector('.navbar');
+    var triggerEl = document.querySelector('.mobile-menu');
     var isExpanded = false;
-    return function(el){
+
+    var menuItems = document.querySelectorAll(".navbar li a");
+    function showHideMenu() {
       if(isExpanded) {
         isExpanded = false;
         triggerEl.innerHTML = "≡";
@@ -30,24 +34,15 @@ window.onload = function(){
         triggerEl.innerHTML = "&#x2715;";
         isExpanded = true;
         menu.className += " expanded";
-
       }
+      return false;
     }
-  })();
-  function initDropDownMenu(){
-    var isShown = false;
-    var item = document.getElementById('arrow-menu');
-    var mobileItem = document.getElementsByClassName("mobile-cls");
-    item.addEventListener("ontouchStart", function(){
-      if(isShown) {
-        mobileItem.style.display = "none";
-        isShown = false;
-      } else {
-        mobileItem.style.display = "block";
-        isShown = true;
-      }
+    triggerEl.addEventListener("touchstart", showHideMenu);
+    [].forEach.call(menuItems, function(item){
+      // item.addEventListener("touchstart", showHideMenu);
     });
-  }
+
+   }
   function initScrolling() {
     var isShown = false;
     new ScrollMagic.Scene({triggerElement: "#home"})
@@ -85,7 +80,6 @@ window.onload = function(){
     var flkty = new Flickity( '.main-gallery', {
         // options
         imagesLoaded: true,
-        lazyLoad: true,
         autoPlay: 2000,
         contain: true,
         wrapAround: true
@@ -113,8 +107,8 @@ window.onload = function(){
           error: function(e) {
           }
         });
-    }
-}
+    };
+  }
   function initTopButtonFunctionality() {
     var upLink = document.getElementById('topButton');
     var isShown = false;
@@ -142,14 +136,12 @@ window.onload = function(){
     var isWeekend = day === 6 || day === 0;
     if(isWeekend) {
       setSpanText(false);
-    } else if((hour >=  8 && hour <= 20 ) || (hour === 7 && minutes >= 30)) {
+    } else if((hour >=  8 && hour < 20 ) || (hour === 7 && minutes >= 30)) {
       setSpanText(true);
     } else {
       setSpanText(false);
     }
     function setSpanText(isOpen) {
-      console.log(isOpen);
-      console.log(el);
       if(isOpen)
         el.innerHTML = "Wir sind gerade geöffnet.";
       else
@@ -157,4 +149,4 @@ window.onload = function(){
     }
 
   }
-}
+};
