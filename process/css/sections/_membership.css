@@ -75,6 +75,7 @@
 
     .ceoimage {
       height: 65vh;
+      max-height: 50rem;
       img {
         width: 50%;
         right:0;

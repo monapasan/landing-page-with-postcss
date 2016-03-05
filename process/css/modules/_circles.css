@@ -9,11 +9,11 @@
   list-style-type: none;
   margin-right: 2rem;
   li {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-bottom: 0.5rem;
-    border: 3px solid $main;
-    border-radius: 2rem;
+    border: 0.2rem solid $main;
+    border-radius: 1.5rem;
   }
   li.active, li:hover, li:focus {
     background-color: $gray;

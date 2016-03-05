@@ -93,7 +93,6 @@
   }
   textarea {
     display: block;
-    min-height: 20vh;
     resize: none;
     outline-color: color($main tint(20%))
   }
