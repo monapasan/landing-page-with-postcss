@@ -14,7 +14,7 @@
       }
     }
     @media $large {
-      height: 40vh;
+      height: 32vh;
       p {
         font-size: 1.3rem;
         margin-top: 2rem;
@@ -32,7 +32,6 @@
     }
     p {
       font-weight: $font-weight-heavy;
-      padding-bottom: 2rem;
     }
 }
 
